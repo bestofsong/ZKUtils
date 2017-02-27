@@ -1,0 +1,16 @@
+PODS:
+  - ZKUtils (0.1.0)
+
+DEPENDENCIES:
+  - ZKUtils (from `../`)
+
+EXTERNAL SOURCES:
+  ZKUtils:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ZKUtils: de120eecb4065dbeae2e26230787d14f0e207ddf
+
+PODFILE CHECKSUM: f111b9b53c4994b24f99c01334260d41da35fb0b
+
+COCOAPODS: 1.2.0
