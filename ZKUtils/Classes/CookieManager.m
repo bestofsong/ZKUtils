@@ -163,7 +163,7 @@
     return [NSString stringWithFormat:@"%@_ios_v%@build%@update%@",
             name, versionStr, build, updateVersion];
   }else {
-    return [NSString stringWithFormat:@"%@_ios_v%@build%@",
+    return [NSString stringWithFormat:@"%@_ios_v%@build%@ source/app-ios",
             name, versionStr, build];
   }
 }
