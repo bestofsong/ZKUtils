@@ -14,8 +14,8 @@
 		8A6E1BE71E63E182001BAFC6 /* CookieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E1BE11E63E182001BAFC6 /* CookieManager.m */; };
 		8A6E1BE81E63E182001BAFC6 /* NSDate+UTCDateString.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6E1BE21E63E182001BAFC6 /* NSDate+UTCDateString.h */; };
 		8A6E1BE91E63E182001BAFC6 /* NSDate+UTCDateString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E1BE31E63E182001BAFC6 /* NSDate+UTCDateString.m */; };
-		8A6E1BEA1E63E182001BAFC6 /* ZKAppMetaManger.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6E1BE41E63E182001BAFC6 /* ZKAppMetaManger.h */; };
-		8A6E1BEB1E63E182001BAFC6 /* ZKAppMetaManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E1BE51E63E182001BAFC6 /* ZKAppMetaManger.m */; };
+		8AB65BF21E83F010005CBB1E /* ZKAppMetaManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AB65BF01E83F010005CBB1E /* ZKAppMetaManager.h */; };
+		8AB65BF31E83F010005CBB1E /* ZKAppMetaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB65BF11E83F010005CBB1E /* ZKAppMetaManager.m */; };
 		954D58D77EC9A3AEF51A8D62DA70F5E6 /* ZKUtils-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 421927A4E8B714F43648996390E13DCE /* ZKUtils-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A40C0124C43B7F867BD66788B1037A7A /* ZKUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB226253E0B0B7DE0F84E6B63DF7FAA /* ZKUtils-dummy.m */; };
 		D14420BA5D030B0D7891C0A494635577 /* Pods-ZKUtils_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC327EB3FAE1A7F04C529088632DF3 /* Pods-ZKUtils_Tests-dummy.m */; };
@@ -53,8 +53,8 @@
 		8A6E1BE11E63E182001BAFC6 /* CookieManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieManager.m; sourceTree = "<group>"; };
 		8A6E1BE21E63E182001BAFC6 /* NSDate+UTCDateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+UTCDateString.h"; sourceTree = "<group>"; };
 		8A6E1BE31E63E182001BAFC6 /* NSDate+UTCDateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+UTCDateString.m"; sourceTree = "<group>"; };
-		8A6E1BE41E63E182001BAFC6 /* ZKAppMetaManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKAppMetaManger.h; sourceTree = "<group>"; };
-		8A6E1BE51E63E182001BAFC6 /* ZKAppMetaManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKAppMetaManger.m; sourceTree = "<group>"; };
+		8AB65BF01E83F010005CBB1E /* ZKAppMetaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKAppMetaManager.h; sourceTree = "<group>"; };
+		8AB65BF11E83F010005CBB1E /* ZKAppMetaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKAppMetaManager.m; sourceTree = "<group>"; };
 		8D7A827EE7F14FB57A434FD1DC35A37C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5E37BB75D88B900EA8010EA1F308342 /* Pods-ZKUtils_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZKUtils_Example-resources.sh"; sourceTree = "<group>"; };
@@ -184,12 +184,12 @@
 		B8FA64E1062C52030FA858CC95672F16 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8AB65BF01E83F010005CBB1E /* ZKAppMetaManager.h */,
+				8AB65BF11E83F010005CBB1E /* ZKAppMetaManager.m */,
 				8A6E1BE01E63E182001BAFC6 /* CookieManager.h */,
 				8A6E1BE11E63E182001BAFC6 /* CookieManager.m */,
 				8A6E1BE21E63E182001BAFC6 /* NSDate+UTCDateString.h */,
 				8A6E1BE31E63E182001BAFC6 /* NSDate+UTCDateString.m */,
-				8A6E1BE41E63E182001BAFC6 /* ZKAppMetaManger.h */,
-				8A6E1BE51E63E182001BAFC6 /* ZKAppMetaManger.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -244,9 +244,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB65BF21E83F010005CBB1E /* ZKAppMetaManager.h in Headers */,
 				8A6E1BE81E63E182001BAFC6 /* NSDate+UTCDateString.h in Headers */,
 				8A6E1BE61E63E182001BAFC6 /* CookieManager.h in Headers */,
-				8A6E1BEA1E63E182001BAFC6 /* ZKAppMetaManger.h in Headers */,
 				80BA050C08050B472DA132573ECC5ED7 /* Pods-ZKUtils_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,9 +364,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C8BBC9C56D2E6FB711C361A42EAAE8 /* Pods-ZKUtils_Example-dummy.m in Sources */,
+				8AB65BF31E83F010005CBB1E /* ZKAppMetaManager.m in Sources */,
 				8A6E1BE91E63E182001BAFC6 /* NSDate+UTCDateString.m in Sources */,
 				8A6E1BE71E63E182001BAFC6 /* CookieManager.m in Sources */,
-				8A6E1BEB1E63E182001BAFC6 /* ZKAppMetaManger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

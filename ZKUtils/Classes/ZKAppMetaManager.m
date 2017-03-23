@@ -1,25 +1,25 @@
 //
-//  ZKAppMetaManger.m
+//  ZKAppMetaManager.m
 //  SmartStudy
 //
 //  Created by wansong.mbp.work on 7/19/16.
 //  Copyright © 2016 Innobuddy Inc. All rights reserved.
 //
 
-#import "ZKAppMetaManger.h"
+#import "ZKAppMetaManager.h"
 #import <UIKit/UIKit.h>
 
-@interface ZKAppMetaManger ()
+@interface ZKAppMetaManager ()
 
 @end
 
-@implementation ZKAppMetaManger
+@implementation ZKAppMetaManager
 
 + (instancetype)sharedInstance {
   static dispatch_once_t onceToken;
-  static ZKAppMetaManger *ret = nil;
+  static ZKAppMetaManager *ret = nil;
   dispatch_once(&onceToken, ^{
-    ret = [[ZKAppMetaManger alloc] init];
+    ret = [[ZKAppMetaManager alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:ret selector:@selector(handleAppQuit:) name:UIApplicationWillTerminateNotification object:nil];
   });
   return ret;

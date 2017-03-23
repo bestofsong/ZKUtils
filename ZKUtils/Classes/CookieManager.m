@@ -8,7 +8,7 @@
 
 #import "CookieManager.h"
 #import "NSDate+UTCDateString.h"
-#import "ZKAppMetaManger.h"
+#import "ZKAppMetaManager.h"
 
 #define kCookieId @"cookie_id"
 #define kFirstTime @"first_time"
@@ -23,7 +23,7 @@
   static CookieManager *ret = nil;
   dispatch_once(&onceToken, ^{
     ret = [CookieManager new];
-    if ([[ZKAppMetaManger sharedInstance] newInstalled]) {
+    if ([[ZKAppMetaManager sharedInstance] newInstalled]) {
       [ret removeCache:NULL];
     }
   });
@@ -31,9 +31,9 @@
 }
 
 - (NSString*)cookieString {
-  return [self cookieStringWithAppVersionStr:[ZKAppMetaManger appVersion]
+  return [self cookieStringWithAppVersionStr:[ZKAppMetaManager appVersion]
                                   appName:@"zhike"
-                              buildVersion:@([ZKAppMetaManger build].integerValue)
+                              buildVersion:@([ZKAppMetaManager build].integerValue)
                             updateVersion:nil];
 }
 
@@ -70,11 +70,11 @@
   }
   
   if (!versionStr) {
-    versionStr = [ZKAppMetaManger appVersion];
+    versionStr = [ZKAppMetaManager appVersion];
   }
   
   if (!buildVersion) {
-    buildVersion = @([ZKAppMetaManger build].integerValue);
+    buildVersion = @([ZKAppMetaManager build].integerValue);
   }
   
   NSString *cpsInfo = @"cpsInfo=";

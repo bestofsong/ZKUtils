@@ -1,5 +1,5 @@
 //
-//  ZKAppMetaManger.h
+//  ZKAppMetaManager.h
 //  SmartStudy
 //
 //  Created by wansong.mbp.work on 7/19/16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZKAppMetaManger : NSObject
+@interface ZKAppMetaManager : NSObject
 
 + (NSString *) appVersion;
 + (NSString *) build;
