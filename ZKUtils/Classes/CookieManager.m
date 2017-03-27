@@ -160,7 +160,7 @@
                    buildVersion:(NSNumber*)build
                   updateVersion:(NSNumber*)updateVersion {
   if (updateVersion) {
-    return [NSString stringWithFormat:@"%@_ios_v%@build%@update%@",
+    return [NSString stringWithFormat:@"%@_ios_v%@build%@update%@ source/app-ios",
             name, versionStr, build, updateVersion];
   }else {
     return [NSString stringWithFormat:@"%@_ios_v%@build%@ source/app-ios",
