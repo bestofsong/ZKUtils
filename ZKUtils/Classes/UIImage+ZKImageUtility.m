@@ -37,7 +37,7 @@
 }
 
 - (UIImage*)resize:(CGSize)size {
-  UIGraphicsBeginImageContext(size);
+  UIGraphicsBeginImageContextWithOptions(size, YES, 0);
   [self drawInRect:CGRectMake(0, 0, size.width, size.height) blendMode:kCGBlendModeCopy alpha:1];
   UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
   UIGraphicsEndImageContext();
