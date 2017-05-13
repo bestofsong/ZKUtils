@@ -19,6 +19,8 @@
 		954D58D77EC9A3AEF51A8D62DA70F5E6 /* ZKUtils-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 421927A4E8B714F43648996390E13DCE /* ZKUtils-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A40C0124C43B7F867BD66788B1037A7A /* ZKUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB226253E0B0B7DE0F84E6B63DF7FAA /* ZKUtils-dummy.m */; };
 		D14420BA5D030B0D7891C0A494635577 /* Pods-ZKUtils_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC327EB3FAE1A7F04C529088632DF3 /* Pods-ZKUtils_Tests-dummy.m */; };
+		F723799C1EC749900053D8C5 /* UIImage+ZKImageUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = F723799A1EC749900053D8C5 /* UIImage+ZKImageUtility.h */; };
+		F723799D1EC749900053D8C5 /* UIImage+ZKImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F723799B1EC749900053D8C5 /* UIImage+ZKImageUtility.m */; };
 		F93421A2523D21AB328E30B370CE42D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		FBDB19D9FD91E099FC3E51BD2779490B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		FD25B324CA56317460E628EC2C7D1E44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -71,6 +73,8 @@
 		DBB252380595FDD446F006E0B556C402 /* ZKUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZKUtils.xcconfig; sourceTree = "<group>"; };
 		E561D004CC571088F47A7BF2EF765655 /* Pods-ZKUtils_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZKUtils_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F1F75E66B9BCDBE3022EA5797B0EA253 /* Pods-ZKUtils_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZKUtils_Tests-resources.sh"; sourceTree = "<group>"; };
+		F723799A1EC749900053D8C5 /* UIImage+ZKImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZKImageUtility.h"; sourceTree = "<group>"; };
+		F723799B1EC749900053D8C5 /* UIImage+ZKImageUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZKImageUtility.m"; sourceTree = "<group>"; };
 		FAB226253E0B0B7DE0F84E6B63DF7FAA /* ZKUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZKUtils-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				8AB65BF01E83F010005CBB1E /* ZKAppMetaManager.h */,
+				F723799A1EC749900053D8C5 /* UIImage+ZKImageUtility.h */,
+				F723799B1EC749900053D8C5 /* UIImage+ZKImageUtility.m */,
 				8AB65BF11E83F010005CBB1E /* ZKAppMetaManager.m */,
 				8A6E1BE01E63E182001BAFC6 /* CookieManager.h */,
 				8A6E1BE11E63E182001BAFC6 /* CookieManager.m */,
@@ -246,6 +252,7 @@
 			files = (
 				8AB65BF21E83F010005CBB1E /* ZKAppMetaManager.h in Headers */,
 				8A6E1BE81E63E182001BAFC6 /* NSDate+UTCDateString.h in Headers */,
+				F723799C1EC749900053D8C5 /* UIImage+ZKImageUtility.h in Headers */,
 				8A6E1BE61E63E182001BAFC6 /* CookieManager.h in Headers */,
 				80BA050C08050B472DA132573ECC5ED7 /* Pods-ZKUtils_Example-umbrella.h in Headers */,
 			);
@@ -365,6 +372,7 @@
 			files = (
 				30C8BBC9C56D2E6FB711C361A42EAAE8 /* Pods-ZKUtils_Example-dummy.m in Sources */,
 				8AB65BF31E83F010005CBB1E /* ZKAppMetaManager.m in Sources */,
+				F723799D1EC749900053D8C5 /* UIImage+ZKImageUtility.m in Sources */,
 				8A6E1BE91E63E182001BAFC6 /* NSDate+UTCDateString.m in Sources */,
 				8A6E1BE71E63E182001BAFC6 /* CookieManager.m in Sources */,
 			);
