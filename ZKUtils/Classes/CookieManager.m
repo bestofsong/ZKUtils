@@ -95,7 +95,9 @@
   NSString *dataString = [[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding];
   
-  return [cpsInfo stringByAppendingString:dataString];
+  NSString *encoded = [dataString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  
+  return [cpsInfo stringByAppendingString:encoded];
   
 }
 
