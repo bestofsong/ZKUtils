@@ -11,14 +11,18 @@
 @interface CookieManager : NSObject
 
 - (nonnull NSString*)cookieStringWithAppVersionStr:(NSString*)versionStr
-                                   appName:(NSString*)name
-                              buildVersion:(NSNumber*)versionCode
-                             updateVersion:(NSNumber*)updateVersion;
+                                           appName:(NSString*)name
+                                      buildVersion:(NSNumber*)versionCode
+                                     updateVersion:(NSNumber*)updateVersion
+                                              site:(NSNumber*)site
+                                              hmsr:(NSNumber*)hmsr;
 
 - (NSString*)cookieStringWithAppVersionStr:(NSString*)versionStr
-                                appName:(NSString*)name
-                            buildVersion:(NSNumber*)buildVersion
-                          updateVersion:(NSNumber*)updateVersion
+                                   appName:(NSString*)name
+                              buildVersion:(NSNumber*)buildVersion
+                             updateVersion:(NSNumber*)updateVersion
+                                      site:(NSNumber*)site
+                                      hmsr:(NSNumber*)hmsr
                                deleteCache:(BOOL)deleteCache;
 
 - (NSString*)cookieString;

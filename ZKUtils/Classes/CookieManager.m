@@ -32,20 +32,26 @@
 
 - (NSString*)cookieString {
   return [self cookieStringWithAppVersionStr:[ZKAppMetaManager appVersion]
-                                  appName:@"zhike"
-                              buildVersion:@([ZKAppMetaManager build].integerValue)
-                            updateVersion:nil];
+                                     appName:@"zhike"
+                                buildVersion:@([ZKAppMetaManager build].integerValue)
+                               updateVersion:nil
+                                        site:nil
+                                        hmsr:nil];
 }
 
 - (NSString*)cookieStringWithAppVersionStr:(NSString*)versionStr
-                                appName:(NSString*)name
-                            buildVersion:(NSNumber*)buildVersion
-                          updateVersion:(NSNumber*)updateVersion {
+                                   appName:(NSString*)name
+                              buildVersion:(NSNumber*)buildVersion
+                             updateVersion:(NSNumber*)updateVersion
+                                      site:(NSNumber *)site
+                                      hmsr:(NSNumber *)hmsr {
   
   return [self cookieStringWithAppVersionStr:versionStr
                                      appName:name
                                 buildVersion:buildVersion
                                updateVersion:updateVersion
+                                        site:site
+                                        hmsr:hmsr
                                  deleteCache:NO];
 }
 
@@ -64,6 +70,8 @@
                                 appName:(NSString*)name
                             buildVersion:(NSNumber*)buildVersion
                           updateVersion:(NSNumber*)updateVersion
+                                      site:(NSNumber*)siteId
+                                      hmsr:(NSNumber*)hmsr
                                deleteCache:(BOOL)deleteCache {
   if (deleteCache) {
     [self removeCache:NULL];
@@ -80,8 +88,10 @@
   NSString *cpsInfo = @"cpsInfo=";
   NSDictionary *cokkie = [[self class] cookieWithVersion:versionStr
                                                  appName:name
-                                             buildVersion:buildVersion
-                                           updateVersion:updateVersion];
+                                            buildVersion:buildVersion
+                                           updateVersion:updateVersion
+                                                    site:siteId
+                                                    hmsr:hmsr];
   
   NSError *error = nil;
   NSData *data = [NSJSONSerialization dataWithJSONObject:cokkie
@@ -104,7 +114,9 @@
 + (NSDictionary*)cookieWithVersion:(NSString*)versionStr
                            appName:(NSString*)name
                        buildVersion:(NSNumber*)buildVersion
-                     updateVersion:(NSNumber*)updateVersion {
+                     updateVersion:(NSNumber*)updateVersion
+                              site:(NSNumber*)siteId
+                              hmsr:(NSNumber*)hmsrId {
   
   NSString *filePath = [self filePath];
   NSDictionary *ret = [self readCookieFromFile];
@@ -116,19 +128,11 @@
   [newCookie setObject:[[NSDate date] UTCDateString] forKey:kFirstTime];
   
   NSString *uuidString = [[NSUUID UUID] UUIDString];
-  
   [newCookie setObject:uuidString forKey:kCookieId];
   
-  [newCookie setObject:[self getHmsr] forKey:kHmsr];
-  
-  [newCookie setObject:
-   [self getSiteWithVersion:versionStr
-                    appName:name
-               buildVersion:buildVersion
-              updateVersion:updateVersion]
-                forKey:kSite];
-  
-  [newCookie setObject:updateVersion ?: buildVersion forKey:@"versionCode"];
+  [newCookie setObject:hmsrId ?: @0 forKey:kHmsr];
+  [newCookie setObject:siteId ?: @0 forKey:kSite];
+  [newCookie setObject:updateVersion ?: buildVersion forKey:@"updateVersion"];
   
   BOOL saveRet = [newCookie writeToFile:filePath atomically:YES];
   if (!saveRet) {
@@ -155,23 +159,6 @@
 + (nullable NSString*)cookieUUID {
   NSDictionary *cookieObj = [self readCookieFromFile];
   return cookieObj[kCookieId];
-}
-
-+ (NSString*)getSiteWithVersion:(NSString*)versionStr
-                        appName:(NSString*)name
-                   buildVersion:(NSNumber*)build
-                  updateVersion:(NSNumber*)updateVersion {
-  if (updateVersion) {
-    return [NSString stringWithFormat:@"%@_ios_v%@build%@update%@",
-            name, versionStr, build, updateVersion];
-  }else {
-    return [NSString stringWithFormat:@"%@_ios_v%@build%@",
-            name, versionStr, build];
-  }
-}
-
-+ (NSString*)getHmsr {
-    return @"AppStore";
 }
 
 + (BOOL)isExpired:(NSString*)dateString {
