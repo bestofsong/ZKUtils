@@ -132,7 +132,7 @@
   
   [newCookie setObject:hmsrId ?: @0 forKey:kHmsr];
   [newCookie setObject:siteId ?: @0 forKey:kSite];
-  [newCookie setObject:updateVersion ?: buildVersion forKey:@"updateVersion"];
+  [newCookie setObject:updateVersion ?: buildVersion forKey:@"versionCode"];
   
   BOOL saveRet = [newCookie writeToFile:filePath atomically:YES];
   if (!saveRet) {
